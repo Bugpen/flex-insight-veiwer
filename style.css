@@ -29,6 +29,11 @@
     --player-details-height: 120px; /* height reserved for details beneath player on desktop (reduced so player appears larger) */
 }
 
+/* Utility Classes for Hidden Elements */
+.hidden {
+    display: none !important;
+}
+
 /* Basic Reset and Global Styles */
 * {
     box-sizing: border-box;
@@ -400,6 +405,40 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 300px;
+}
+
+/* ============================================
+   ZOOM PREVENTION - MOBILE PHONE
+   Prevent pinch zoom and scaling on phone devices
+   ============================================ */
+* {
+    touch-action: manipulation;
+}
+
+html, body {
+    touch-action: pan-x pan-y;
+    -ms-touch-action: pan-x pan-y;
+    overscroll-behavior: none;
+}
+
+/* Prevent zooming on specific interactive elements */
+.joker-screen,
+.joker-mobile-header,
+.joker-mobile-icon-row,
+.joker-action-area {
+    touch-action: pan-x pan-y;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Allow text selection only in input fields */
+.joker-action input,
+.joker-action textarea,
+.joker-action select {
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 
 /* ============================================
